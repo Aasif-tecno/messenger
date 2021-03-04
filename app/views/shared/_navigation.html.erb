@@ -15,15 +15,19 @@
           <%= link_to "Logout" ,logout_path,method: :delete, class:"item" %>
         <% else %>
           <%= link_to "log In" ,login_path ,class:"item" %>
-          <%# <%= link_to "Sign Up" ,signup_path ,class:"item" %> %>
+          <%= link_to "Sign Up" ,signup_path ,class:"item" %>
         <% end %>
       </div>
     </div>
     <% if !logged_in? %>
       <div class="item">
-      <%= link_to "log in", login_path, class:"ui orange button"%>
+        <%= link_to "log in", login_path, class:"ui orange button"%>
+      </div>
+      <div class="item">
+        <%= link_to "Sign Up" ,signup_path ,class:"ui orange button" %>
+      </div>
     <% else %>
-      <%#  <%= link_to "log in", login_path, class:"ui orange button"%> %>
+       <%= link_to current_user.username ,login_path,class:"item" %> 
       <% end %>
     </div>
   </div>
